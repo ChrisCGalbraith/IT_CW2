@@ -42,9 +42,9 @@ export default class CreateTodo extends Component {
         e.preventDefault();
         
         console.log(`Form submitted:`);
-        console.log(`Todo Description: ${this.state.todo_description}`);
-        console.log(`Todo Responsible: ${this.state.todo_responsible}`);
-        console.log(`Todo Priority: ${this.state.todo_priority}`);
+        console.log(`Speaker Name: ${this.state.todo_description}`);
+        console.log(`Speaker Subject: ${this.state.todo_responsible}`);
+        console.log(`Room Number: ${this.state.todo_priority}`);
         
         const newTodo = {
             todo_description: this.state.todo_description,
@@ -53,7 +53,7 @@ export default class CreateTodo extends Component {
             todo_completed: this.state.todo_completed
         };
 
-        axios.post('http://localhost:4000/todos/add', newTodo)
+        axios.post('http://localhost:4000/speakers/add', newTodo)
             .then(res => console.log(res.data));
 
         this.setState({
@@ -123,7 +123,7 @@ export default class CreateTodo extends Component {
                     </div>
 
                     <div className="form-group">
-                        <input type="submit" value="Create Todo" className="btn btn-primary" />
+                        <input type="submit" value="Create Speaker" className="btn btn-primary" />
                     </div>
                 </form>
             </div>

@@ -23,13 +23,13 @@ export default class TodosList extends Component {
     render() {
         return (
             <div>
-                <h3>Todos List</h3>
+                <h3>Speakers</h3>
                 <table className="table table-striped" style={{marginTop: 20 }}>
                     <thead>
                         <tr>
-                            <th>Description</th>
-                            <th>Responsible</th>
-                            <th>Priority</th>
+                            <th>Name</th>
+                            <th>Subject</th>
+                            <th>Room</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -42,7 +42,7 @@ export default class TodosList extends Component {
     }
 
     componentDidMount(){
-        axios.get('http://localhost:4000/todos/')
+        axios.get('http://localhost:4000/speakers')
          .then(response => {
              this.setState({ todos: response.data });
          })

@@ -150,6 +150,10 @@ export default class EditTodo extends Component {
                     <div className="form-group">
                         <input type="submit" value="Update Todo" className="btn btn-primary" />
                     </div>
+
+                    <div className="form-group">
+                        <input type="submit" value="Delete Todo" className="btn btn-primary" />
+                    </div>
                 </form>
             </div>
         )
