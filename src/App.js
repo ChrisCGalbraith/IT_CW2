@@ -15,7 +15,7 @@ class App extends Component {
    return (
       <Router>
         <div className="container">
-          <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <nav className="navbar navbar-expand-lg fixed-top navbar-light bg-light">
             <a class="navbar-brand" href="localhost:3000" target="_blank">
               <img src={logo} width="40" height="40" alt="Home"/>
             </a>
@@ -39,6 +39,20 @@ class App extends Component {
           <Route path="/" exact component={TodosList} />
           <Route path="/edit/:id" component={EditTodo} />
           <Route path="/create" component={CreateTodo} />
+        </div>
+        <div className="container">
+          <div
+            className="landing-wrapper"
+            style={{
+              backgroundImage: "url(/background.png)",
+              backgroundPosition: 'center',
+              width: "1920px",
+              height: "1080px",
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat'
+            }}
+          >
+          </div>
         </div>
       </Router>
     );
