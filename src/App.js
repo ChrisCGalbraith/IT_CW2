@@ -46,8 +46,8 @@ class App extends Component {
             style={{
               backgroundImage: "url(/background.png)",
               backgroundPosition: 'center',
-              width: "1920px",
-              height: "1080px",
+              width: '100vw',
+              height: "100vh",
               backgroundSize: 'cover',
               backgroundRepeat: 'no-repeat'
             }}
