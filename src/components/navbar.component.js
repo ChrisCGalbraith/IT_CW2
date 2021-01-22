@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import CreateTodo from "./create-todo.component";
+import CreateBooking from "./create-booking.component";
 import EditTodo from "./edit-todo.component";
 import TodosList from "./todos-list.component";
 import Home from "./home.component";
@@ -38,7 +38,7 @@ export default class Navbar extends Component {
                     <Route path="/home" exact component={Home} />
                     <Route path="/" exact component={TodosList} />
                     <Route path="/edit/:id" component={EditTodo} />
-                    <Route path="/create" component={CreateTodo} />
+                    <Route path="/create" component={CreateBooking} />
                 </div>
             </Router>
         )

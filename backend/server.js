@@ -3,50 +3,49 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const todoRoutes = express.Router();
+const bookingRoutes = express.Router();
 const PORT = 4000;
 
-let Todo = require('./todo.model');
+let Booking = require('./booking.model');
 
 app.use(cors());
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb://127.0.0.1:27017/todos', { useNewUrlParser: true });
+mongoose.connect('mongodb://127.0.0.1:27017/bookings', { useNewUrlParser: true });
 const connection = mongoose.connection;
 
 connection.once('open', function() {
     console.log("MongoDB database connection established successfully");
 })
 
-todoRoutes.route('/').get(function(req, res) {
-    Todo.find(function(err, todos) {
+bookingRoutes.route('/').get(function(req, res) {
+    Booking.find(function(err, bookings) {
         if (err) {
             console.log(err);
         } else {
-            res.json(todos);
+            res.json(bookings);
         }
     });
 });
 
-todoRoutes.route('/:id').get(function(req, res) {
+bookingRoutes.route('/:id').get(function(req, res) {
     let id = req.params.id;
-    Todo.findById(id, function(err, todo) {
-        res.json(todo);
+    Booking.findById(id, function(err, bookings) {
+        res.json(booking);
     });
 });
 
-todoRoutes.route('/update/:id').post(function(req, res) {
-    Todo.findById(req.params.id, function(err, todo) {
-        if (!todo)
+bookingRoutes.route('/update/:id').post(function(req, res) {
+    Booking.findById(req.params.id, function(err, booking) {
+        if (!booking)
             res.status(404).send("data is not found");
         else
-            todo.todo_description = req.body.todo_description;
-            todo.todo_responsible = req.body.todo_responsible;
-            todo.todo_priority = req.body.todo_priority;
-            todo.todo_completed = req.body.todo_completed;
+            booking.booking_description = req.body.booking_description;
+            booking.booking_responsible = req.body.booking_responsible;
+            booking.booking_priority = req.body.booking_priority;
 
-            todo.save().then(todo => {
-                res.json('Todo updated!');
+            booking.save().then(booking => {
+                res.json('Booking updated!');
             })
             .catch(err => {
                 res.status(400).send("Update not possible");
@@ -54,30 +53,28 @@ todoRoutes.route('/update/:id').post(function(req, res) {
     });
 });
 
-todoRoutes.route('/add').post(function(req, res) {
-	const todo_description = req.body.todo_description;
-	const todo_responsible = req.body.todo_responsible;
-	const todo_priority = req.body.todo_priority;
-	const todo_completed = req.body.todo_completed;
-    let todo = new Todo({
-		todo_description,
-		todo_responsible,
-		todo_priority,
-		todo_completed
+bookingRoutes.route('/add').post(function(req, res) {
+	const booking_description = req.body.booking_description;
+	const booking_responsible = req.body.booking_responsible;
+	const booking_priority = req.body.booking_priority;
+    let booking = new Booking({
+		booking_description,
+		booking_responsible,
+		booking_priority,
 	});
-    todo.save()
-        .then(todo => {
+    booking.save()
+        .then(booking => {
             res.status(200).json({
-				'todo': 'todo added successfully',
-				"data" : todo
+				'booking': 'booking added successfully',
+				"data" : booking
  			});
         })
         .catch(err => {
-            res.status(400).send('adding new todo failed');
+            res.status(400).send('adding new booking failed');
         });
 });
 
-app.use('/todos', todoRoutes);
+app.use('/bookings', bookingRoutes);
 
 app.listen(PORT, function() {
     console.log("Server is running on Port: " + PORT);

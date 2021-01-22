@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
-import CreateTodo from "./components/create-todo.component";
+import CreateBooking from "./components/create-booking.component";
 import EditTodo from "./components/edit-todo.component";
 import TodosList from "./components/todos-list.component";
 import Home from "./components/home.component";
