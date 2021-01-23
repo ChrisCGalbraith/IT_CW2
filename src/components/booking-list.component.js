@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Table from "./bookings/table"
 
 const Booking = props => (
     <tr>
@@ -40,8 +41,9 @@ export default class BookingsList extends Component {
     render() {
         return (
             <div>
-                <h3>Speakers</h3>
-                <table className="table table-striped" style={{marginTop: 20 }}>
+                <h3>Bookings</h3>
+                <Table />
+                {/* <table className="table table-striped bookinglist" style={{marginTop: 20 }}>
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -50,9 +52,13 @@ export default class BookingsList extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        { this.bookingList() }
+                        {
+                            this.state.bookings.map((currentBooking, index) => (
+                                <Booking booking={currentBooking} key={index} />
+                            ))
+                        }
                     </tbody>
-                </table>
+                </table> */}
             </div>
         )
     }

@@ -17,6 +17,10 @@
   z-index: -1;
 }
 
+.bookinglist {
+  background: white;
+}
+
 .speaker-container {
   position: absolute;
   max-width: 800px;
