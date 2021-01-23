@@ -11,7 +11,7 @@ let Booking = require('./booking.model');
 app.use(cors());
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb://127.0.0.1:27017/bookings', { useNewUrlParser: true });
+mongoose.connect('mongodb+srv://chris:root@cluster0.uhm2r.mongodb.net/bookings?retryWrites=true&w=majority', { useNewUrlParser: true });
 const connection = mongoose.connection;
 
 connection.once('open', function() {
