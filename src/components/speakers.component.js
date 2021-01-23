@@ -15,7 +15,7 @@ export default class Speaker extends Component {
         <div class="row">
             <div class="column">
               <div class="speaker-container">
-                <img src="speaker1.jpg" alt="Speaker 1" /> 
+                <img src="Speaker1.jpg" alt="Speaker 1" /> 
                 <div class="content">
               <h1>Dalinar Kholin</h1>
               <p>Theories of the Stormfather - Room A</p>
@@ -25,7 +25,7 @@ export default class Speaker extends Component {
             
             <div class="column">
               <div class="speaker-container">
-                <img src="speaker2.jpg" alt="Speaker 2" /> 
+                <img src="Speaker2.jpg" alt="Speaker 2" /> 
                 <div class="content">
               <h1>Navani Kholin</h1>
               <p>Fabrial Mechanics - Room B</p>
@@ -35,7 +35,7 @@ export default class Speaker extends Component {
 
             <div class="column">
               <div class="speaker-container">
-                <img src="speaker3.jpg" alt="Speaker 3" /> 
+                <img src="Speaker3.jpg" alt="Speaker 3" /> 
                 <div class="content">
               <h1>Jasnah Kholin</h1>
               <p>On the origins of Shadesmar - Room C</p>
