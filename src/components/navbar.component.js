@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import CreateBooking from "./create-booking.component";
 import EditTodo from "./edit-todo.component";
-import TodosList from "./todos-list.component";
+import BookingsList from "./booking-list.component";
 import Home from "./home.component";
 import logo from "../logo.png";
 
@@ -36,9 +36,9 @@ export default class Navbar extends Component {
                     </nav>
                     <br />
                     <Route path="/home" exact component={Home} />
-                    <Route path="/" exact component={TodosList} />
+                    <Route path="/" exact component={BookingsList} />
                     <Route path="/edit/:id" component={EditTodo} />
-                    <Route path="/create" component={CreateBooking} />
+                    <Route path="/bookings" component={CreateBooking} />
                 </div>
             </Router>
         )

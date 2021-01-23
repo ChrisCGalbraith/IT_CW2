@@ -19,19 +19,19 @@ export default class CreateBooking extends Component {
         }
     }
 
-    onChangeTodoSpeaker(e) {
+    onChangeBookingSpeaker(e) {
         this.setState({
             booking_speaker: e.target.value
         });
     }
 
-    onChangeTodoSubject(e) {
+    onChangeBookingSubject(e) {
         this.setState({
             booking_subject: e.target.value
         });
     }
 
-    onChangeTodoRoom(e) {
+    onChangeBookingRoom(e) {
         this.setState({
             booking_room: e.target.value
         });
@@ -88,34 +88,34 @@ export default class CreateBooking extends Component {
                             <input  className="form-check-input" 
                                     type="radio" 
                                     name="roomOptions" 
-                                    id="roomLow" 
-                                    value="Low"
-                                    checked={this.state.booking_room==='Low'} 
+                                    id="roomA" 
+                                    value="A"
+                                    checked={this.state.booking_room==='A'} 
                                     onChange={this.onChangeBookingRoom}
                                     />
-                            <label className="form-check-label">Low</label>
+                            <label className="form-check-label">A</label>
                         </div>
                         <div className="form-check form-check-inline">
                             <input  className="form-check-input" 
                                     type="radio" 
                                     name="roomOptions" 
-                                    id="roomMedium" 
-                                    value="Medium" 
-                                    checked={this.state.booking_room==='Medium'} 
+                                    id="roomB" 
+                                    value="B" 
+                                    checked={this.state.booking_room==='B'} 
                                     onChange={this.onChangeBookingRoom}
                                     />
-                            <label className="form-check-label">Medium</label>
+                            <label className="form-check-label">B</label>
                         </div>
                         <div className="form-check form-check-inline">
                             <input  className="form-check-input" 
                                     type="radio" 
                                     name="roomOptions" 
-                                    id="roomHigh" 
-                                    value="High" 
-                                    checked={this.state.booking_room==='High'} 
+                                    id="roomC" 
+                                    value="C" 
+                                    checked={this.state.booking_room==='C'} 
                                     onChange={this.onChangeBookingRoom}
                                     />
-                            <label className="form-check-label">High</label>
+                            <label className="form-check-label">C</label>
                         </div>
                     </div>
 

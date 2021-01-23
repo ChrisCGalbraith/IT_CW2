@@ -1,32 +1,30 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-export default class EditTodo extends Component {
+export default class EditBooking extends Component {
 
     constructor(props) {
         super(props);
 
-        this.onChangeTodoDescription = this.onChangeTodoDescription.bind(this);
-        this.onChangeTodoResponsible = this.onChangeTodoResponsible.bind(this);
-        this.onChangeTodoPriority = this.onChangeTodoPriority.bind(this);
-        this.onChangeTodoCompleted = this.onChangeTodoCompleted.bind(this);
+        this.onChangeBookingSpeaker = this.onChangeBookingSpeaker.bind(this);
+        this.onChangeBookingSubject = this.onChangeBookingSubject.bind(this);
+        this.onChangeBookingRoom = this.onChangeBookingRoom.bind(this);
+
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
-            todo_description: '',
-            todo_responsible: '',
-            todo_priority: '',
-            todo_completed: false
+            booking_Speaker: '',
+            booking_subject: '',
+            booking_room: '',
         }
     }
 
     onSubmit(e) {
         e.preventDefault();
         const obj = {
-            todo_description: this.state.todo_description,
-            todo_responsible: this.state.todo_responsible,
-            todo_priority: this.state.todo_priority,
-            todo_completed: this.state.todo_completed
+            booking_speaker: this.state.booking_speaker,
+            booking_subject: this.state.booking_subject,
+            booking_room: this.state.booking_room,
         };
         console.log(obj);
         axios.post('http://localhost:4000/bookings/update/'+this.props.match.params.id, obj)
@@ -39,10 +37,9 @@ export default class EditTodo extends Component {
         axios.get('http://localhost:4000/bookings/'+this.props.match.params.id)
             .then(response => {
                 this.setState({
-                    todo_description: response.data.todo_description,
-                    todo_responsible: response.data.todo_responsible,
-                    todo_priority: response.data.todo_priority,
-                    todo_completed: response.data.todo_completed
+                    booking_speaker: response.data.booking_speaker,
+                    booking_subject: response.data.booking_subject,
+                    booking_room: response.data.booking_room,
                 })   
             })
             .catch(function (error) {
@@ -50,109 +47,86 @@ export default class EditTodo extends Component {
             })
     }
 
-    onChangeTodoDescription(e) {
+    onChangeBookingSpeaker(e) {
         this.setState({
-            todo_description: e.target.value
+            booking_speaker: e.target.value
         });
     }
 
-    onChangeTodoResponsible(e) {
+    onChangeBookingSubject(e) {
         this.setState({
-            todo_responsible: e.target.value
+            booking_subject: e.target.value
         });
     }
 
-    onChangeTodoPriority(e) {
+    onChangeBookingRoom(e) {
         this.setState({
-            todo_priority: e.target.value
-        });
-    }
-
-    onChangeTodoCompleted(e) {
-        this.setState({
-            todo_completed: !this.state.todo_completed
+            booking_room: e.target.value
         });
     }
 
     render() {
         return (
             <div>
-                <h3 align="center">Update Todo</h3>
+                <h3 align="center">Update Booking</h3>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group"> 
-                        <label>Description: </label>
+                        <label>Speaker: </label>
                         <input  type="text"
                                 className="form-control"
-                                value={this.state.todo_description}
-                                onChange={this.onChangeTodoDescription}
+                                value={this.state.booking_speaker}
+                                onChange={this.onChangeBookingSpeaker}
                                 />
                     </div>
                     <div className="form-group">
-                        <label>Responsible: </label>
+                        <label>Subject: </label>
                         <input 
                                 type="text" 
                                 className="form-control"
-                                value={this.state.todo_responsible}
-                                onChange={this.onChangeTodoResponsible}
+                                value={this.state.booking_subject}
+                                onChange={this.onChangeBookingSubject}
                                 />
                     </div>
                     <div className="form-group">
                         <div className="form-check form-check-inline">
                             <input  className="form-check-input" 
                                     type="radio" 
-                                    name="priorityOptions" 
-                                    id="priorityLow" 
-                                    value="Low"
-                                    checked={this.state.todo_priority==='Low'} 
-                                    onChange={this.onChangeTodoPriority}
+                                    name="roomOptions" 
+                                    id="roomA" 
+                                    value="A"
+                                    checked={this.state.booking_room==='A'} 
+                                    onChange={this.onChangeBookingroom}
                                     />
-                            <label className="form-check-label">Low</label>
+                            <label className="form-check-label">A</label>
                         </div>
                         <div className="form-check form-check-inline">
                             <input  className="form-check-input" 
                                     type="radio" 
-                                    name="priorityOptions" 
-                                    id="priorityMedium" 
-                                    value="Medium" 
-                                    checked={this.state.todo_priority==='Medium'} 
-                                    onChange={this.onChangeTodoPriority}
+                                    name="roomOptions" 
+                                    id="roomB" 
+                                    value="B" 
+                                    checked={this.state.booking_room==='B'} 
+                                    onChange={this.onChangeBookingroom}
                                     />
-                            <label className="form-check-label">Medium</label>
+                            <label className="form-check-label">B</label>
                         </div>
                         <div className="form-check form-check-inline">
                             <input  className="form-check-input" 
                                     type="radio" 
-                                    name="priorityOptions" 
-                                    id="priorityHigh" 
-                                    value="High" 
-                                    checked={this.state.todo_priority==='High'} 
-                                    onChange={this.onChangeTodoPriority}
+                                    name="roomOptions" 
+                                    id="roomC" 
+                                    value="C" 
+                                    checked={this.state.booking_room==='C'} 
+                                    onChange={this.onChangeBookingroom}
                                     />
-                            <label className="form-check-label">High</label>
+                            <label className="form-check-label">C</label>
                         </div>
-                    </div>
-                    <div className="form-check">
-                        <input  className="form-check-input"
-                                id="completedCheckbox"
-                                type="checkbox"
-                                name="completedCheckbox"
-                                onChange={this.onChangeTodoCompleted}
-                                checked={this.state.todo_completed}
-                                value={this.state.todo_completed}
-                                />
-                        <label className="form-check-label" htmlFor="completedCheckbox">
-                            Completed
-                        </label>                        
                     </div>
 
                     <br />
 
                     <div className="form-group">
-                        <input type="submit" value="Update Todo" className="btn btn-primary" />
-                    </div>
-
-                    <div className="form-group">
-                        <input type="submit" value="Delete Todo" className="btn btn-primary" />
+                        <input type="submit" value="Update Booking" className="btn btn-primary" />
                     </div>
                 </form>
             </div>

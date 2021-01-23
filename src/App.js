@@ -10,7 +10,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 import CreateBooking from "./components/create-booking.component";
 import EditTodo from "./components/edit-todo.component";
-import TodosList from "./components/todos-list.component";
+import BookingsList from "./components/booking-list.component";
 import Home from "./components/home.component";
 import Navbar from "./components/navbar.component";
 
@@ -22,7 +22,7 @@ class App extends Component {
     return (
       <>
         <div
-          className="landing-wrapper"
+          className="background-image"
           style={{
             backgroundImage: "url(/background.png)",
             backgroundPosition: '0% 0%',

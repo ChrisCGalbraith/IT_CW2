@@ -40,9 +40,9 @@ bookingRoutes.route('/update/:id').post(function(req, res) {
         if (!booking)
             res.status(404).send("data is not found");
         else
-            booking.booking_description = req.body.booking_description;
-            booking.booking_responsible = req.body.booking_responsible;
-            booking.booking_priority = req.body.booking_priority;
+            booking.booking_speaker = req.body.booking_speaker;
+            booking.booking_subject = req.body.booking_subject;
+            booking.booking_room = req.body.booking_room;
 
             booking.save().then(booking => {
                 res.json('Booking updated!');
@@ -54,13 +54,13 @@ bookingRoutes.route('/update/:id').post(function(req, res) {
 });
 
 bookingRoutes.route('/add').post(function(req, res) {
-	const booking_description = req.body.booking_description;
-	const booking_responsible = req.body.booking_responsible;
-	const booking_priority = req.body.booking_priority;
+	const booking_speaker = req.body.booking_speaker;
+	const booking_subject = req.body.booking_subject;
+	const booking_room = req.body.booking_room;
     let booking = new Booking({
-		booking_description,
-		booking_responsible,
-		booking_priority,
+		booking_speaker,
+		booking_subject,
+		booking_room
 	});
     booking.save()
         .then(booking => {
