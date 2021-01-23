@@ -17,6 +17,23 @@
   z-index: -1;
 }
 
+.speaker_title {
+  position: absolute;
+  top: 0;
+}
+
+.background-image {
+  background: hsla(207, 51%, 83%, 1);
+
+  background: linear-gradient(315deg, hsla(207, 51%, 83%, 1) 51%, hsla(18, 100%, 49%, 1) 100%);
+
+  background: -moz-linear-gradient(315deg, hsla(207, 51%, 83%, 1) 51%, hsla(18, 100%, 49%, 1) 100%);
+
+  background: -webkit-linear-gradient(315deg, hsla(207, 51%, 83%, 1) 51%, hsla(18, 100%, 49%, 1) 100%);
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#BFD7EA", endColorstr="#F84B00", GradientType=1 );
+}
+
 .bookinglist {
   background: white;
 }

@@ -93,7 +93,7 @@ export default class CreateBooking extends Component {
                                     checked={this.state.booking_room==='A'} 
                                     onChange={this.onChangeBookingRoom}
                                     />
-                            <label className="form-check-label">A</label>
+                            <label className="form-check-label">Room A</label>
                         </div>
                         <div className="form-check form-check-inline">
                             <input  className="form-check-input" 
@@ -104,7 +104,7 @@ export default class CreateBooking extends Component {
                                     checked={this.state.booking_room==='B'} 
                                     onChange={this.onChangeBookingRoom}
                                     />
-                            <label className="form-check-label">B</label>
+                            <label className="form-check-label">Room B</label>
                         </div>
                         <div className="form-check form-check-inline">
                             <input  className="form-check-input" 
@@ -115,7 +115,7 @@ export default class CreateBooking extends Component {
                                     checked={this.state.booking_room==='C'} 
                                     onChange={this.onChangeBookingRoom}
                                     />
-                            <label className="form-check-label">C</label>
+                            <label className="form-check-label">Room C</label>
                         </div>
                     </div>
 

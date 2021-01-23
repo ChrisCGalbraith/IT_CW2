@@ -26,7 +26,7 @@ class App extends Component {
           style={{
             position: "fixed",
             zIndex: "-1",
-            backgroundImage: "url(/background.png)",
+            //backgroundImage: "url(/background.png)",
             backgroundPosition: '0% 0%',
             width: '100vw',
             height: '100vh',

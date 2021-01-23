@@ -9,13 +9,16 @@ export default class Speaker extends Component {
     render() {
         return (
         <>
+        <div class="speaker_title">
+            <h1>Speakers of the Conference</h1>
+        </div>
         <div class="row">
             <div class="column">
               <div class="speaker-container">
                 <img src="speaker1.jpg" alt="Speaker 1" /> 
                 <div class="content">
               <h1>Dalinar Kholin</h1>
-              <p>Theories of the Stormfather</p>
+              <p>Theories of the Stormfather - Room A</p>
                 </div>
               </div>
             </div>
@@ -25,7 +28,7 @@ export default class Speaker extends Component {
                 <img src="speaker2.jpg" alt="Speaker 2" /> 
                 <div class="content">
               <h1>Navani Kholin</h1>
-              <p>Fabrial Mechanics</p>
+              <p>Fabrial Mechanics - Room B</p>
                 </div>
               </div>
             </div>
@@ -35,11 +38,10 @@ export default class Speaker extends Component {
                 <img src="speaker3.jpg" alt="Speaker 3" /> 
                 <div class="content">
               <h1>Jasnah Kholin</h1>
-              <p>On the origins of Shadesmar</p>
+              <p>On the origins of Shadesmar - Room C</p>
                 </div>
               </div>
             </div>
-
         </div>
         </> 
         )
