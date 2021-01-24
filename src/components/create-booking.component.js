@@ -51,7 +51,7 @@ export default class CreateBooking extends Component {
             booking_room: this.state.booking_room,
         };
 
-        axios.post('http://localhost:4000/bookings/add', newBooking)
+        axios.post('/bookings/add', newBooking)
             .then(res => console.log(res.data));
 
         this.setState({

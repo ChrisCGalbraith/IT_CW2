@@ -27,14 +27,14 @@ export default class EditBooking extends Component {
             booking_room: this.state.booking_room,
         };
         console.log(obj);
-        axios.post('http://localhost:4000/bookings/update/'+this.props.match.params.id, obj)
+        axios.post('/bookings/update/'+this.props.match.params.id, obj)
             .then(res => console.log(res.data));
         
         this.props.history.push('/');
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/bookings/'+this.props.match.params.id)
+        axios.get('/bookings/'+this.props.match.params.id)
             .then(response => {
                 this.setState({
                     booking_speaker: response.data.booking_speaker,

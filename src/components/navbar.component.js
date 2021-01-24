@@ -17,7 +17,7 @@ export default class Navbar extends Component {
             <Router>
                 <div className="container">
                     <nav className="navbar navbar-expand-lg fixed-top navbar-light bg-light">
-                        <a class="navbar-brand" href="localhost:3000" target="_blank">
+                        <a class="navbar-brand" href="#" target="_blank">
                             <img src={logo} width="40" height="40" alt="Home" />
                         </a>
                         <Link to="/home" className="navbar-brand">Home</Link>

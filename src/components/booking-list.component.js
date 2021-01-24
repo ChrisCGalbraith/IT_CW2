@@ -23,7 +23,7 @@ export default class BookingsList extends Component {
 
 
     componentDidMount(){
-        axios.get('http://localhost:4000/bookings')
+        axios.get('/bookings')
          .then(response => {
              this.setState({ bookings: response.data });
          })

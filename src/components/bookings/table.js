@@ -9,7 +9,7 @@ const Table = () => {
 
     // Same as component did mount
     useEffect(() => {
-        axios.get('http://localhost:4000/bookings')
+        axios.get('/bookings')
             .then(response => {
                 setBookings(response.data);
             })
